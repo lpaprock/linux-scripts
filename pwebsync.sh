@@ -19,7 +19,7 @@ REMOTEWEB1="//var/www/html/YOURNAME1"
 
 expect -c "
     set timeout 7200
-    spawn rsync -avz -e ssh $USER@$HOST://var/www/html/learnway $LOCALWEB
+    spawn rsync -avz -e ssh $USER@$HOST:REMOTEWEB1 $LOCALWEB
     expect {
     password: {send \"$PWD\r\"; exp_continue }
     }
@@ -30,7 +30,7 @@ REMOTEWEB2="//var/www/html/YOURNAME2"
 
 expect -c "
    set timeout 7200
-   spawn rsync -avz -e ssh $USER@$HOST://var/www/html/symfony $LOCALWEB
+   spawn rsync -avz -e ssh $USER@$HOST:REMOTEWEB2 $LOCALWEB
    expect {
    password: {send \"$PWD\r\"; exp_continue }
    }
